@@ -21,8 +21,8 @@ class OneClassDataset(utils.Dataset):
         # データセット名，クラスID，クラス名
         self.add_class('shrimp_dataset', 1, 'shrimp')
 
-        images = glob.glob(os.path.join(dataset_dir, 'images', '*.png'))
-        masks = glob.glob(os.path.join(dataset_dir, 'masks', '*.png'))
+        images = glob.glob(os.path.join(dataset_dir, 'image', '*.png'))
+        masks = glob.glob(os.path.join(dataset_dir, 'mask', '*.png'))
 
         for image_path, mask_path in zip(images, masks):
             assert os.path.basename(image_path) == os.path.basename(mask_path), 'データセット名不一致'
